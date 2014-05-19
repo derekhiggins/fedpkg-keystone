@@ -1,20 +1,20 @@
-From 5b075da509d4f5c4ed5b2bb99215eab7a7b1e368 Mon Sep 17 00:00:00 2001
+From 986746aed283bd90382b50c5f14cd9e97b83a50b Mon Sep 17 00:00:00 2001
 From: Alan Pevec <apevec@redhat.com>
 Date: Mon, 9 Sep 2013 15:22:20 +0200
-Subject: [PATCH] sync parameter values with keystone-dist.conf
+Subject: [PATCH 2/3] sync parameter values with keystone-dist.conf
 
 and adjust descriptions to take dist.conf defaults into account (rhbz#923912)
 
 Change-Id: If36c384f86843a6506a494d79beca65639fb3480
 ---
- etc/keystone.conf.sample | 17 +++++++++--------
- 1 file changed, 9 insertions(+), 8 deletions(-)
+ etc/keystone.conf.sample | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
 
 diff --git a/etc/keystone.conf.sample b/etc/keystone.conf.sample
-index c5f57bf..3aa1314 100644
+index 2bfd21e..49f65f8 100644
 --- a/etc/keystone.conf.sample
 +++ b/etc/keystone.conf.sample
-@@ -385,7 +385,7 @@
+@@ -361,7 +361,7 @@
  #verbose=false
  
  # Log output to standard error (boolean value)
@@ -23,7 +23,7 @@ index c5f57bf..3aa1314 100644
  
  # Format string to use for log messages with context (string
  # value)
-@@ -439,10 +439,11 @@
+@@ -415,10 +415,11 @@
  # %(default)s (string value)
  #log_date_format=%Y-%m-%d %H:%M:%S
  
@@ -38,16 +38,16 @@ index c5f57bf..3aa1314 100644
  
  # (Optional) The base directory used for relative --log-file
  # paths (string value)
-@@ -581,7 +582,7 @@
+@@ -555,7 +556,7 @@
  
  # Catalog template file name for use with the template catalog
  # backend. (string value)
 -#template_file=default_catalog.templates
 +#template_file=/etc/keystone/default_catalog.templates
  
- # Keystone catalog backend driver. (string value)
+ # Catalog backend driver. (string value)
  #driver=keystone.catalog.backends.sql.Catalog
-@@ -622,7 +623,7 @@
+@@ -596,7 +597,7 @@
  # Deprecated group/name - [DEFAULT]/sql_connection
  # Deprecated group/name - [DATABASE]/sql_connection
  # Deprecated group/name - [sql]/connection
@@ -56,16 +56,18 @@ index c5f57bf..3aa1314 100644
  
  # The SQL mode to be used for MySQL sessions. This option,
  # including the default, overrides any server-set SQL mode. To
-@@ -710,7 +711,7 @@
+@@ -683,8 +684,8 @@
+ # Options defined in keystone
  #
  
- # Keystone EC2Credential backend driver. (string value)
+-# EC2Credential backend driver. (string value)
 -#driver=keystone.contrib.ec2.backends.kvs.Ec2
++# Keystone EC2Credential backend driver. (string value)
 +#driver=keystone.contrib.ec2.backends.sql.Ec2
  
  
  [endpoint_filter]
-@@ -1147,7 +1148,7 @@
+@@ -1129,7 +1130,7 @@
  
  # Name of the paste configuration file that defines the
  # available pipelines. (string value)
@@ -74,3 +76,6 @@ index c5f57bf..3aa1314 100644
  
  
  [policy]
+-- 
+1.9.0
+
